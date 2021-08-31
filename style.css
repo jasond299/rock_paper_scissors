@@ -17,6 +17,38 @@
     top: 50px;
     text-align: center;
     border: 5px solid green;
+    font-size: 24px;
+}
+
+.choice-cont {
+    position: relative;
+    border: 5px solid yellow;
+    top: 200px;
+    left: 10%;
+    width: 80%;
+    height: 200px;
+}
+
+.choice{
+    position: relative;
+    border: 5px solid blue;
+    width: 150px;
+    height: 150px;
+    top: 10%;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.choice-img{
+    position: relative;
+    width: 150px;
+}
+
+
+.img{
+    position: relative;
+    cursor: pointer;
+    width: 150px;
 }
 
 .btn {
