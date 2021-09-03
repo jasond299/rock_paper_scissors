@@ -11,7 +11,7 @@ function computerPlay(){
 
 function playRound(playerSelection,computerSelection){
     if (playerSelection.toUpperCase() === computerSelection.toUpperCase())
-        return "Draw";
+        return "Its a Draw";
     
     if (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "SCISSORS")
         return "You Win! Rock beats Scissors";
@@ -35,13 +35,33 @@ function game(){
     }
 }
 
+const choice = Array.from(document.querySelectorAll('.img'));
 
 
+choice.forEach(button => {
+    button.addEventListener('click', () => {
+        console.log(button);
+    })
 
-const test = document.querySelector('.sub');
-test.textContent = "hello";
+});
+
+console.log(choice);
+
+const test = document.querySelector('.score');
+
 //console.log(playRound("rock",computerPlay()));
-
+const me = document.querySelector('.message');
+me.textContent = "Its a draw";
 //console.log(computerPlay());
+
+let score;
+
+let playerScore = 1;
+let computerScore = 1;
+
+score = playerScore + ' - ' + computerScore;
+
+test.textContent = score;
+
 
 //game();

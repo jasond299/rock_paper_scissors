@@ -10,14 +10,16 @@
     border: 5px solid red;
 }
 
-.sub {
+.score, .message {
     position: relative;
     width: 50%;
     left: 25%;
     top: 50px;
     text-align: center;
     border: 5px solid green;
-    font-size: 24px;
+    font-size: 28px;
+    margin-top: 40px;
+    
 }
 
 .choice-cont {
@@ -41,6 +43,7 @@
     text-align: center;
     float: left;
     margin-right: 100px;
+    left: 50px;
 }
 
 .choice-img{
@@ -48,17 +51,26 @@
     width: 150px;
 }
 
+.choice-text{
+    position: relative;
+    font-size: 22px;
+    top: 10px;
+}
+
+
+
 
 .img{
     position: relative;
     cursor: pointer;
     width: 200px;
     float: left;
-    left: 50px;
+    
 }
 
 .img:hover{
     top: 3px;
+    
 }
 
 .btn {
