@@ -1,3 +1,9 @@
+const test = document.querySelector('.score');
+const message = document.querySelector('.message');
+
+
+
+
 function computerPlay(){
     let x = Math.floor(Math.random() * 3);
 
@@ -9,23 +15,37 @@ function computerPlay(){
         return "Paper";
 }
 
+function playerSelection(index){
+    if (index == 0)
+        return "ROCK";
+    if (index == 1)
+        return "PAPER";
+    if (index == 2)
+        return "SCISSORS"
+}
+
 function playRound(playerSelection,computerSelection){
     if (playerSelection.toUpperCase() === computerSelection.toUpperCase())
-        return "Its a Draw";
+         message.textContent = "Its a Draw";
+        // return "Its a Draw";
     
     if (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "SCISSORS")
-        return "You Win! Rock beats Scissors";
+        message.textContent = "You Win! Rock beats Scissors";
     
     if (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "PAPER")
-        return "You Lose! Paper beats Rock";
+        message.textContent = "You Lose! Paper beats Rock";
+    
     if (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "PAPER")
-        return "You Win! Scissors beats Paper";
+        message.textContent = "You Win! Scissors beats Paper";
+    
     if (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "ROCK")
-        return "You Lose! Rock beats Scissors";
+        message.textContent = "You Lose! Rock beats Scissors";
+        
     if (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "SCISSORS")
-        return "You Lose! Scissors beats Paper";
+        message.textContent = "You Lose! Scissors beats Paper";
+    
     if (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "ROCK")
-        return "You Win! Paper beats Rock";
+        message.textContent = "You Win! Paper beats Rock";
 }
 
 function game(){
@@ -35,29 +55,35 @@ function game(){
     }
 }
 
-const choice = Array.from(document.querySelectorAll('.img'));
 
 
-choice.forEach(button => {
+
+let playerScore = 0;
+let computerScore = 0;
+
+const choice = Array.from(document.querySelectorAll('.choice-img'));
+
+
+choice.forEach((button, index) => {
     button.addEventListener('click', () => {
-        console.log(button);
+        playerChoice = playerSelection(index);
+        console.log(playRound(playerChoice,computerPlay()));
     })
 
 });
 
-console.log(choice);
 
-const test = document.querySelector('.score');
+
+
 
 //console.log(playRound("rock",computerPlay()));
-const me = document.querySelector('.message');
+
 me.textContent = "Its a draw";
 //console.log(computerPlay());
 
 let score;
 
-let playerScore = 1;
-let computerScore = 1;
+
 
 score = playerScore + ' - ' + computerScore;
 
