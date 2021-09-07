@@ -1,17 +1,28 @@
 const test = document.querySelector('.score');
 const message = document.querySelector('.message');
 
+let playerScore = 0;
+let computerScore = 0;
+
+let score;
+
+function scoreUpdate(playerScore, computerScore){
+    score = playerScore + ' - ' + computerScore;
+    test.textContent = score;
+}
+
+
 
 
 
 function computerPlay(){
-    let x = Math.floor(Math.random() * 3);
+    let num = Math.floor(Math.random() * 3);
 
-    if (x == 0)
+    if (num == 0)
         return "Rock";
-    if (x == 1)
+    if (num == 1)
         return "Scissors";
-    if (x == 2)
+    if (num == 2)
         return "Paper";
 }
 
@@ -25,27 +36,43 @@ function playerSelection(index){
 }
 
 function playRound(playerSelection,computerSelection){
-    if (playerSelection.toUpperCase() === computerSelection.toUpperCase())
+    if (playerSelection.toUpperCase() === computerSelection.toUpperCase()){
          message.textContent = "Its a Draw";
-        // return "Its a Draw";
+    }
     
-    if (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "SCISSORS")
+    if (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "SCISSORS"){
+        playerScore += 1;
+        scoreUpdate(playerScore, computerScore);
         message.textContent = "You Win! Rock beats Scissors";
+    }
     
-    if (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "PAPER")
+    if (playerSelection.toUpperCase() === "ROCK" && computerSelection.toUpperCase() === "PAPER"){
+        computerScore += 1;
+        scoreUpdate(playerScore, computerScore);    
         message.textContent = "You Lose! Paper beats Rock";
-    
-    if (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "PAPER")
+    }
+    if (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "PAPER"){
+        playerScore += 1;
+        scoreUpdate(playerScore, computerScore);
         message.textContent = "You Win! Scissors beats Paper";
-    
-    if (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "ROCK")
+    }
+    if (playerSelection.toUpperCase() === "SCISSORS" && computerSelection.toUpperCase() === "ROCK"){
+        computerScore += 1;
+        scoreUpdate(playerScore, computerScore);    
         message.textContent = "You Lose! Rock beats Scissors";
+    }
         
-    if (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "SCISSORS")
+    if (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "SCISSORS"){
+        computerScore += 1;
+        scoreUpdate(playerScore, computerScore);    
         message.textContent = "You Lose! Scissors beats Paper";
+    }
     
-    if (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "ROCK")
+    if (playerSelection.toUpperCase() === "PAPER" && computerSelection.toUpperCase() === "ROCK"){
+        playerScore += 1;
+        scoreUpdate(playerScore, computerScore);
         message.textContent = "You Win! Paper beats Rock";
+    }
 }
 
 function game(){
@@ -58,16 +85,22 @@ function game(){
 
 
 
-let playerScore = 0;
-let computerScore = 0;
+
 
 const choice = Array.from(document.querySelectorAll('.choice-img'));
 
 
 choice.forEach((button, index) => {
     button.addEventListener('click', () => {
+        if (playerScore >= 5 || computerScore >= 5) {
+            return;
+        }
+        
         playerChoice = playerSelection(index);
         console.log(playRound(playerChoice,computerPlay()));
+        if (playerScore == 5)
+    
+
     })
 
 });
@@ -78,16 +111,10 @@ choice.forEach((button, index) => {
 
 //console.log(playRound("rock",computerPlay()));
 
-me.textContent = "Its a draw";
+
 //console.log(computerPlay());
 
-let score;
 
-
-
-score = playerScore + ' - ' + computerScore;
-
-test.textContent = score;
 
 
 //game();
