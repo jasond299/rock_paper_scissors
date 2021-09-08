@@ -16,7 +16,7 @@
     left: 25%;
     top: 50px;
     text-align: center;
-    border: 5px solid green;
+    
     font-size: 28px;
     margin-top: 40px;
     
@@ -24,7 +24,7 @@
 
 .choice-cont {
     position: relative;
-    border: 5px solid yellow;
+    
     top: 200px;
     left: 15%;
     width: 70%;
@@ -35,7 +35,7 @@
 
 .choice{
     position: relative;
-    border: 5px solid blue;
+    
     width: 200px;
     height: 200px;
     top: 10%;
@@ -48,7 +48,14 @@
 
 .choice-img{
     position: relative;
-    width: 150px;
+    height: 200px;
+    width: 200px;
+}
+
+
+.choice-img:hover{
+    top: 10px;
+    cursor: pointer;
 }
 
 .choice-text{
@@ -62,16 +69,13 @@
 
 .img{
     position: relative;
-    cursor: pointer;
+   
     width: 200px;
     float: left;
     
 }
 
-.img:hover{
-    top: 3px;
-    
-}
+
 
 .btn {
     position: relative;

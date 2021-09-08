@@ -98,7 +98,12 @@ choice.forEach((button, index) => {
         
         playerChoice = playerSelection(index);
         console.log(playRound(playerChoice,computerPlay()));
-        if (playerScore == 5)
+        if (playerScore == 5){
+            message.textContent = "Game Over! You Win!";
+        }
+        if (computerScore == 5){
+            message.textContent = "Game Over! You Lose!"
+        }
     
 
     })
