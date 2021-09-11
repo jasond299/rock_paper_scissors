@@ -10,16 +10,25 @@
     border: 5px solid red;
 }
 
-.score, .message {
+.score, .message, .desc , .desc2 {
     position: relative;
     width: 50%;
     left: 25%;
     top: 50px;
     text-align: center;
     
-    font-size: 28px;
+    font-size: 30px;
     margin-top: 40px;
     
+}
+
+.desc{
+    top: 200px;
+}
+
+.desc2{
+    top: 200px;
+    font-size: 25px;
 }
 
 .choice-cont {
@@ -31,6 +40,7 @@
     height: 300px;
     display: flex;
     justify-content: space-between;
+    
 }
 
 .choice{
