@@ -15,7 +15,7 @@ function scoreUpdate(playerScore, computerScore){
 
 
 
-function computerPlay(){
+function computerPlay(){                       // generate computer choice
     let num = Math.floor(Math.random() * 3);
 
     if (num == 0)
@@ -102,7 +102,7 @@ choice.forEach((button, index) => {
             message.textContent = "Game Over! You Win!";
         }
         if (computerScore == 5){
-            message.textContent = "Game Over! You Lose!"
+            message.textContent = "Game Over! You Lose!";
         }
     
 
@@ -114,12 +114,3 @@ choice.forEach((button, index) => {
 
 
 
-//console.log(playRound("rock",computerPlay()));
-
-
-//console.log(computerPlay());
-
-
-
-
-//game();

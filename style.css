@@ -4,6 +4,11 @@
     font-size: 35px;
     line-height: 2;
 }
+
+body{
+    background-color: #E8D2AE;
+}
+
 .cont {
     width:100%; 
     
